@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from 'react'
+import ButtonComponent from './ButtonComponent';
+import Record from './Record';
 
+export const AppContext = createContext()
 function App() {
+  const [presentStudents, setPresentStudents] = useState(new Set())
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <AppContext.Provider value={{presentStudents,setPresentStudents}}>
+      <div className="contain max-w-[450px] mx-auto bg-slate-300 p-2">
+        <h1 className='text-2xl font-semibold my-4'>NoteAttendance</h1>
+        <ButtonComponent />
+        <Record />
+      </div>
+    </AppContext.Provider>
   );
 }
 
