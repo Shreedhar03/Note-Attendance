@@ -9,7 +9,7 @@ export default function ButtonComponent() {
 
     const updatedState = new Set(presentStudents);
     if(!updatedState.has(rollNumber)){
-      updatedState.add(rollNumber)
+      updatedState.add(parseInt(rollNumber))
     }else{
       updatedState.delete(rollNumber)
     }
@@ -19,7 +19,7 @@ export default function ButtonComponent() {
     let buttons = [];
     for (let i = 1; i <= 79; i++) {
       buttons.push(
-        <button id={i} className={`text-xl p-2 w-12 ${presentStudents.has(i) ? 'bg-blue-500' : 'bg-slate-100'}`} onClick={() => { addStudent(i) }}>{i}</button>
+        <button key={i} className={`text-2xl rounded-lg self-start p-2 w-12 ${presentStudents.has(i) ? 'bg-green-600' : 'bg-red-600'}`} onClick={() => {i<10 ? addStudent(i) : addStudent(i) }}>{i<10 ? i : i}</button>
       )
     }
 
@@ -27,7 +27,7 @@ export default function ButtonComponent() {
   }
 
   return (
-    <div className='flex flex-wrap gap-2 justify-center'>
+    <div className='flex flex-wrap gap-3 justify-center'>
       {renderButtons()}
     </div>
   )

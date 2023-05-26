@@ -5,15 +5,21 @@ import Record from './Record';
 export const AppContext = createContext()
 function App() {
   const [presentStudents, setPresentStudents] = useState(new Set())
+  const [date, setDate] = useState(new Date().toDateString())
   const [rollNumbers, setRollNumbers] = useState([...presentStudents])
   useEffect(() => {
     setRollNumbers([...presentStudents])
   }, [presentStudents])
+
+  setInterval(() => {
+    setDate(new Date().toDateString())
+  },)
   return (
 
-    <AppContext.Provider value={{ presentStudents, setPresentStudents, rollNumbers, setRollNumbers }}>
+    <AppContext.Provider value={{ presentStudents, setPresentStudents, rollNumbers, setRollNumbers, date }}>
       <div className="contain max-w-[450px] mx-auto p-2">
         <h1 className='text-2xl font-semibold my-4 text-center'>NoteAttendance</h1>
+        <h2 className='font-semibold italic text-2xl text-center py-5'>{date}</h2>
         <ButtonComponent />
         <Record />
       </div>
