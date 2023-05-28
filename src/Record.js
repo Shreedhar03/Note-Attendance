@@ -21,7 +21,7 @@ export default function Record() {
         })}
       </div>
       <h2>Present Count : {filteredNumbers.length}</h2>
-      <button className='text-md bg-blue-500 text-white p-2' onClick={copyRollNos}>Copy Attendance</button>
+      <button className='text-md bg-blue-500 text-white p-2' onClick={copyRollNos}>Copy</button>
     </div>
   )
 }
