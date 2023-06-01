@@ -27,8 +27,10 @@ export default function ButtonComponent() {
   }
 
   return (
-    <div className='flex flex-wrap gap-3 justify-center'>
+    <div className=''>
+      <section className='flex flex-wrap gap-3 max-w-[288px] mx-auto'>
       {renderButtons()}
+      </section>
     </div>
   )
 }
