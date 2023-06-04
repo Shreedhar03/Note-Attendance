@@ -15,15 +15,15 @@ function App() {
   useEffect(() => {
     setRollNumbers([...presentStudents])
     localStorage.setItem("present",JSON.stringify(Array.from(presentStudents)))
-    localStorage.clear()
   }, [presentStudents])
 
   useEffect(()=>{
     if(new Date().getHours()===0){
       localStorage.clear();
     }
+    console.log(new Date().getHours());
     setDate(new Date().toDateString())
-  })
+  },[])
   return (
 
     <AppContext.Provider value={{ presentStudents, setPresentStudents, rollNumbers, setRollNumbers, date }}>
