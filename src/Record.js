@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AppContext } from './App'
 export default function Record() {
   let { rollNumbers, date } = useContext(AppContext)
+  const [btnValue,setBtnValue] = useState("Copy Attendance")
 
   const copyRollNos = () => {
     const combined = `${date} - Attendance \n\n${rollNumbers}`
@@ -11,6 +12,12 @@ export default function Record() {
   let filteredNumbers = rollNumbers.sort((a, b) => {
     return a - b
   })
+  const changeBtnValue=()=>{
+    setBtnValue("Copied✅")
+    setTimeout(()=>{
+      setBtnValue("Copy Attendance")
+    },1500)
+  }
 
   return (
     <div className='my-8 flex flex-col gap-2'>
@@ -22,7 +29,11 @@ export default function Record() {
       </div>
       <h2>Present Count : {filteredNumbers.length}</h2>
       <h2>Absent Count : {79-filteredNumbers.length}</h2>
-      <button className='text-md bg-blue-500 text-white p-2' onClick={copyRollNos}>Copy Attendance</button>
+      <button className='text-md bg-blue-500 text-white p-2' onClick={()=>{
+        copyRollNos();
+        changeBtnValue();
+
+      }}>{btnValue}</button>
     </div>
   )
 }
