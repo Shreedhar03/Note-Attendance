@@ -22,6 +22,7 @@ function App() {
     if(new Date().getHours()===0){
       localStorage.clear();
     }
+    setDate(new Date().toDateString())
   })
   return (
 
