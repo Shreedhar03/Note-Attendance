@@ -29,7 +29,7 @@ function App() {
     <AppContext.Provider value={{ presentStudents, setPresentStudents, rollNumbers, setRollNumbers, date }}>
       <div className="contain max-w-[450px] mx-auto p-2">
         <div className='text-2xl font-semibold my-4 flex justify-center'>
-          <img src={logo} className='w-8' alt="logo" />
+          <img src={logo} className='w-8 text-[burnsilk]' alt="logo" />
           <p>NoteAttendance</p>
         </div>
         <h2 className='font-semibold italic text-2xl text-center py-5'>{date}</h2>
