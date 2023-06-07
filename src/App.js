@@ -27,12 +27,12 @@ function App() {
   return (
 
     <AppContext.Provider value={{ presentStudents, setPresentStudents, rollNumbers, setRollNumbers, date }}>
-      <div className="contain max-w-[450px] mx-auto p-2">
+      <div className="contain max-w-[450px] mx-auto p-2 flex flex-col items-center">
         <div className='text-2xl font-semibold my-4 flex justify-center'>
           <img src={logo} className='w-8 text-[burnsilk]' alt="logo" />
-          <p>NoteAttendance</p>
+          <p className='text-white'>NoteAttendance</p>
         </div>
-        <h2 className='font-semibold italic text-2xl text-center py-5'>{date}</h2>
+        <h2 className='text-2xl text-white text-center py-5'>{date}</h2>
         <ButtonComponent />
         <Record />
       </div>
