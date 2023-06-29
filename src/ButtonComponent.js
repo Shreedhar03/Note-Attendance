@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { AppContext } from './App'
-
+import './index.css'
 
 export default function ButtonComponent() {
   let { presentStudents, setPresentStudents } = useContext(AppContext)
@@ -19,7 +19,7 @@ export default function ButtonComponent() {
     let buttons = [];
     for (let i = 1; i <= 79; i++) {
       buttons.push(
-        <button key={i} className={`text-2xl rounded-lg self-start p-2 w-12 ${presentStudents.has(i) ? 'bg-green-600' : 'bg-red-600'}`} onClick={() => {i<10 ? addStudent(i) : addStudent(i) }}>{i<10 ? i : i}</button>
+        <button key={i} className={`text-2xl rounded-lg self-start animate p-2 w-12 ${presentStudents.has(i) ? 'bg-green-600' : 'bg-red-600'}`} onClick={() => {i<10 ? addStudent(i) : addStudent(i) }}>{i<10 ? i : i}</button>
       )
     }
 
