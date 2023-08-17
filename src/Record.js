@@ -13,7 +13,7 @@ export default function Record() {
     return a - b
   })
   const changeBtnValue = () => {
-    setBtnValue("Copied✅")
+    setBtnValue("Copied")
     setTimeout(() => {
       setBtnValue("Copy Attendance")
     }, 1500)
