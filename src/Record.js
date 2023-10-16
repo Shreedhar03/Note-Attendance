@@ -3,16 +3,14 @@ import { AppContext } from './App'
 import wa from './assets/whatsapp.svg'
 
 export default function Record() {
-  let { rollNumbers, date, setPresentStudents, message } = useContext(AppContext)
+  let { rollNumbers, date, setPresentStudents, message ,filteredNumbers } = useContext(AppContext)
 
   const copyRollNos = () => {
     const combined = `${date} - Attendance \n\n${rollNumbers}`
     navigator.clipboard.writeText(combined)
   }
 
-  let filteredNumbers = rollNumbers.sort((a, b) => {
-    return a - b
-  })
+ 
   // const changeBtnValue = () => {
   // setBtnValue("Copied")
   //   setTimeout(() => {
